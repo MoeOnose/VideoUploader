@@ -1,24 +1,230 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Video Uploader View Controller-->
+        <scene sceneID="lWa-zE-cuR">
+            <objects>
+                <viewController id="kOc-lM-K0D" customClass="VideoUploaderViewController" customModule="VideoUploader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z4C-d3-Rvp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7k-6B-MWw">
+                                <rect key="frame" x="71" y="592" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="8ch-8Q-ysd"/>
+                                    <constraint firstAttribute="width" constant="80" id="ZzL-jt-ru6"/>
+                                </constraints>
+                                <state key="normal" title="Select"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ3-FJ-fKD">
+                                <rect key="frame" x="0.0" y="288" width="414" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="rA5-b3-L6i"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZZ3-FJ-fKD" firstAttribute="centerX" secondItem="Sxt-ZX-PuX" secondAttribute="centerX" id="1TH-Je-htB"/>
+                            <constraint firstItem="X7k-6B-MWw" firstAttribute="top" secondItem="Sxt-ZX-PuX" secondAttribute="top" constant="548" id="FXH-ea-XKL"/>
+                            <constraint firstItem="ZZ3-FJ-fKD" firstAttribute="width" secondItem="Z4C-d3-Rvp" secondAttribute="width" id="cZz-Zt-6N4"/>
+                            <constraint firstItem="X7k-6B-MWw" firstAttribute="leading" secondItem="Sxt-ZX-PuX" secondAttribute="leading" constant="71" id="kUb-uu-9h1"/>
+                            <constraint firstItem="X7k-6B-MWw" firstAttribute="top" secondItem="ZZ3-FJ-fKD" secondAttribute="bottom" constant="54" id="mk5-vs-5p4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sxt-ZX-PuX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bun-lA-zVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-862.31884057971024" y="919.41964285714278"/>
+        </scene>
+        <!--Video Uploader View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="VideoUploaderViewController" customModule="VideoUploader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWn-xa-Auu">
+                                <rect key="frame" x="120" y="317.5" width="174" height="191"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="160"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nmo-BQ-Og7">
+                                <rect key="frame" x="0.0" y="288" width="414" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="HeD-KS-Zy5"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="y3W-tk-Arf">
+                                <rect key="frame" x="71" y="592" width="272" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZ1-rP-HmY">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" red="0.4415667808219178" green="0.71586044520547942" blue="0.12050513698630137" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="fEM-Pz-KQu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="SELECT"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapSelectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Emp-5s-YkJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvq-Ly-lyL">
+                                        <rect key="frame" x="96" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" red="1" green="0.75123073630136983" blue="0.029484160958904111" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="FzU-Pq-2yr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
+                                        <state key="normal" title="PLAY"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapPlayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JeT-ZU-uM0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rt-cz-iuU">
+                                        <rect key="frame" x="192" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" red="0.15084546232876711" green="0.67998180650684936" blue="0.70055650684931503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="1Rg-Ej-g75"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
+                                        <color key="tintColor" red="0.76078431369999999" green="0.3921568627" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="UPLOAD">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapUploadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hoh-H1-AdG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="2fs-Ay-9ya"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4m-1x-Se2">
+                                <rect key="frame" x="132" y="726" width="150" height="39"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
+                                <state key="normal" title="👉 VideoList 👈"/>
+                                <connections>
+                                    <segue destination="ysg-3U-h5o" kind="showDetail" id="JLA-2T-YUu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VideoUploader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7s-yi-f2X">
+                                <rect key="frame" x="83" y="189" width="248" height="35"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.10196078431372549" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c4m-1x-Se2" firstAttribute="top" secondItem="y3W-tk-Arf" secondAttribute="bottom" constant="54" id="0JR-4c-TFr"/>
+                            <constraint firstItem="Nmo-BQ-Og7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Gga-ta-RNE"/>
+                            <constraint firstItem="MWn-xa-Auu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-40" id="H8l-C2-GvA"/>
+                            <constraint firstItem="Nmo-BQ-Og7" firstAttribute="top" secondItem="f7s-yi-f2X" secondAttribute="bottom" constant="64" id="IbV-wO-zVF"/>
+                            <constraint firstItem="Nmo-BQ-Og7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-40" id="M9U-yM-VPs"/>
+                            <constraint firstItem="Nmo-BQ-Og7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="QRl-8r-1qr"/>
+                            <constraint firstItem="MWn-xa-Auu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Uvk-9r-WG3"/>
+                            <constraint firstItem="f7s-yi-f2X" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="YRy-Et-ZVA"/>
+                            <constraint firstItem="f7s-yi-f2X" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZSv-k0-sLU"/>
+                            <constraint firstItem="y3W-tk-Arf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="awH-zb-MFT"/>
+                            <constraint firstItem="f7s-yi-f2X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="145" id="bhy-4A-6v1"/>
+                            <constraint firstItem="c4m-1x-Se2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="f5V-39-d0B"/>
+                            <constraint firstItem="y3W-tk-Arf" firstAttribute="top" secondItem="Nmo-BQ-Og7" secondAttribute="bottom" constant="54" id="hEm-n7-Z22"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="thumbnailImageView" destination="Nmo-BQ-Og7" id="fTw-PB-mT1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="108.48214285714285"/>
+        </scene>
+        <!--Compressed Video Player View Controller-->
+        <scene sceneID="bfs-kP-v88">
+            <objects>
+                <viewController storyboardIdentifier="CompressedVideoPlayerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ysg-3U-h5o" customClass="CompressedVideoPlayerViewController" customModule="VideoUploader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JKl-qB-e8N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💿 Video List 💿" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gid-rq-M6y">
+                                <rect key="frame" x="100.5" y="189" width="213.5" height="42"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1M-5e-Itv">
+                                <rect key="frame" x="342.5" y="76" width="34" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="↩️"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iPl-F5-uCP">
+                                <rect key="frame" x="0.0" y="263" width="414" height="599"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="267" id="9cb-EZ-zUg">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="267"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9cb-EZ-zUg" id="aDr-wF-dp3">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="266.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iPl-F5-uCP" firstAttribute="centerX" secondItem="5QY-Li-Gi4" secondAttribute="centerX" id="12f-bf-J4x"/>
+                            <constraint firstItem="iPl-F5-uCP" firstAttribute="top" secondItem="Gid-rq-M6y" secondAttribute="bottom" constant="32" id="865-jS-ywg"/>
+                            <constraint firstItem="5QY-Li-Gi4" firstAttribute="trailing" secondItem="C1M-5e-Itv" secondAttribute="trailing" multiplier="1.1" id="FHB-0Z-krl"/>
+                            <constraint firstItem="Gid-rq-M6y" firstAttribute="centerX" secondItem="5QY-Li-Gi4" secondAttribute="centerX" id="WE8-fT-yvV"/>
+                            <constraint firstItem="5QY-Li-Gi4" firstAttribute="bottom" secondItem="iPl-F5-uCP" secondAttribute="bottom" id="akj-FD-UYK"/>
+                            <constraint firstItem="C1M-5e-Itv" firstAttribute="top" secondItem="5QY-Li-Gi4" secondAttribute="top" constant="32" id="pBB-N1-cTc"/>
+                            <constraint firstItem="Gid-rq-M6y" firstAttribute="top" secondItem="5QY-Li-Gi4" secondAttribute="top" constant="145" id="qDh-Sd-fHL"/>
+                            <constraint firstItem="iPl-F5-uCP" firstAttribute="width" secondItem="JKl-qB-e8N" secondAttribute="width" id="sKt-pM-f8V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5QY-Li-Gi4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PcC-Hl-W3G"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q5k-5T-mSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1083" y="108"/>
         </scene>
     </scenes>
 </document>

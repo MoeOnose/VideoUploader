@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		656F31F82396A5F3008046E0 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656F31F72396A5F3008046E0 /* APIClient.swift */; };
+		656F31FA2396AA21008046E0 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656F31F92396AA21008046E0 /* Video.swift */; };
 		65D88F7A23892AE0009BD97A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D88F7923892AE0009BD97A /* AppDelegate.swift */; };
-		65D88F7C23892AE0009BD97A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D88F7B23892AE0009BD97A /* ViewController.swift */; };
+		65D88F7C23892AE0009BD97A /* VideoUploaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D88F7B23892AE0009BD97A /* VideoUploaderViewController.swift */; };
 		65D88F7F23892AE0009BD97A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D88F7D23892AE0009BD97A /* Main.storyboard */; };
 		65D88F8123892AE5009BD97A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D88F8023892AE5009BD97A /* Assets.xcassets */; };
 		65D88F8423892AE5009BD97A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D88F8223892AE5009BD97A /* LaunchScreen.storyboard */; };
@@ -34,9 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		656F31F72396A5F3008046E0 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		656F31F92396AA21008046E0 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		65D88F7623892AE0009BD97A /* VideoUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D88F7923892AE0009BD97A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65D88F7B23892AE0009BD97A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		65D88F7B23892AE0009BD97A /* VideoUploaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUploaderViewController.swift; sourceTree = "<group>"; };
 		65D88F7E23892AE0009BD97A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65D88F8023892AE5009BD97A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65D88F8323892AE5009BD97A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				65D88F7923892AE0009BD97A /* AppDelegate.swift */,
-				65D88F7B23892AE0009BD97A /* ViewController.swift */,
+				65D88F7B23892AE0009BD97A /* VideoUploaderViewController.swift */,
+				656F31F72396A5F3008046E0 /* APIClient.swift */,
+				656F31F92396AA21008046E0 /* Video.swift */,
 				65D88F7D23892AE0009BD97A /* Main.storyboard */,
 				65D88F8023892AE5009BD97A /* Assets.xcassets */,
 				65D88F8223892AE5009BD97A /* LaunchScreen.storyboard */,
@@ -256,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65D88F7C23892AE0009BD97A /* ViewController.swift in Sources */,
+				65D88F7C23892AE0009BD97A /* VideoUploaderViewController.swift in Sources */,
+				656F31FA2396AA21008046E0 /* Video.swift in Sources */,
 				65D88F7A23892AE0009BD97A /* AppDelegate.swift in Sources */,
+				656F31F82396A5F3008046E0 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5G5NSFDM4C;
 				INFOPLIST_FILE = VideoUploader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5G5NSFDM4C;
 				INFOPLIST_FILE = VideoUploader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
