@@ -8,13 +8,13 @@ class VideoUploaderViewController: UIViewController {
 
     private let imagePickerController = UIImagePickerController()
     private var videoUrl: NSURL?
-    private var compressedVideoUrl: URL?
+    private var videoName: String?
 
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBAction func didTapSelectButton(_ sender: Any) { selectVideo() }
     @IBAction func didTapPlayButton(_ sender: Any) { playVideo() }
     @IBAction func didTapUploadButton(_ sender: Any) { uploadVideo() }
-
+    @IBAction func didTapLatestVideoButton(_ sender: Any) { playUploadedLatestVideo() }
     override func viewDidLoad() {
         super.viewDidLoad()
         confirmPhotoLibraryAuthenticationStatus()
@@ -80,6 +80,8 @@ extension VideoUploaderViewController: UIImagePickerControllerDelegate, UINaviga
         //print("PHAsset", phAsset)
         let key = UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerMediaURL")
         videoUrl = info[key] as? NSURL
+        //urlの最後がファイル名になる
+        videoName = videoUrl?.lastPathComponent
         print(videoUrl ?? "videoUrl is not found")
         print(videoUrl?.absoluteURL ?? "videoUrl.absoluteUrl is not found")
         thumbnailImageView.image = generateThumbnailFromVideo((videoUrl?.absoluteURL)!)
@@ -131,13 +133,16 @@ extension VideoUploaderViewController {
 // MARK: Upload video
 extension VideoUploaderViewController {
     private func uploadVideo() {
-
-        print(playerViewController.player?.currentItem)
-        print(videoUrl?.absoluteURL)
-        guard let videoClipPath = videoUrl?.absoluteURL else { return }
-        API.postData(videoClipPath: videoClipPath)
+        guard
+            let videoClipPath = videoUrl?.absoluteURL,
+            let videoClipName = videoName
+        else { print("not found video path or name"); return }
+        API.postData(videoClipPath: videoClipPath, videoClipName: videoClipName)
     }
 }
 
-
-
+extension VideoUploaderViewController {
+    private func playUploadedLatestVideo() {
+        API.fetchLatestVideo()
+    }
+}

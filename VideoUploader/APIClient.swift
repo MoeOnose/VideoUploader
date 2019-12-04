@@ -4,19 +4,18 @@ import Alamofire
 
 // mime-type: https://www.tagindex.com/html5/basic/mimetype.html
 struct API {
-    static func postData(videoClipPath: URL){
-        guard let url = URL(string: "http://localhost:3000/api/v1/videos") else{ return }
-        let data = "testVideo".data(using: .utf8)
+    let baseURL = URL(string: "http://localhost:3000/api/v1/videos")!
+    static func postData(videoClipPath: URL, videoClipName: String){
         let videoClip = videoClipPath
         //multipart/form-dataでデータを送信する方法
         Alamofire.upload(multipartFormData: { multipartFormData in
             //multipartFormDataオブジェクトに対してデータの追加を行う
-            if let data = data {
-                multipartFormData.append(data, withName: "data" , mimeType: "text/plain")
-                multipartFormData.append(videoClip, withName: "video", fileName: "\(Date().description).MOV", mimeType: "video/quicktime")
-            }
+//            if let data = data {
+//                multipartFormData.append(data, withName: "data" , mimeType: "text/plain")
+                multipartFormData.append(videoClip, withName: "clip", fileName: videoClipName, mimeType: "video/quicktime")
+//            }
 
-            print(multipartFormData)
+            print(multipartFormData.boundary)
         }, to: url) { encodingResult in
             //encodingが成功するとこのハンドラが呼ばれる
             switch encodingResult {
@@ -31,5 +30,9 @@ struct API {
                 print(error)
             }
         }
+    }
+
+    static func fetchLatestVideo() {
+        
     }
 }

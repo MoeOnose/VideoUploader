@@ -132,11 +132,11 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4m-1x-Se2">
-                                <rect key="frame" x="132" y="726" width="150" height="39"/>
+                                <rect key="frame" x="115" y="726" width="184" height="39"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
-                                <state key="normal" title="👉 VideoList 👈"/>
+                                <state key="normal" title="👉 Latest Video 👈"/>
                                 <connections>
-                                    <segue destination="ysg-3U-h5o" kind="showDetail" id="JLA-2T-YUu"/>
+                                    <action selector="didTapLatestVideoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pKF-k6-6jy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VideoUploader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7s-yi-f2X">
@@ -172,59 +172,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="108.48214285714285"/>
-        </scene>
-        <!--Compressed Video Player View Controller-->
-        <scene sceneID="bfs-kP-v88">
-            <objects>
-                <viewController storyboardIdentifier="CompressedVideoPlayerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ysg-3U-h5o" customClass="CompressedVideoPlayerViewController" customModule="VideoUploader" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JKl-qB-e8N">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💿 Video List 💿" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gid-rq-M6y">
-                                <rect key="frame" x="100.5" y="189" width="213.5" height="42"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="32"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1M-5e-Itv">
-                                <rect key="frame" x="342.5" y="76" width="34" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="↩️"/>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iPl-F5-uCP">
-                                <rect key="frame" x="0.0" y="263" width="414" height="599"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="267" id="9cb-EZ-zUg">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="267"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9cb-EZ-zUg" id="aDr-wF-dp3">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="266.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="iPl-F5-uCP" firstAttribute="centerX" secondItem="5QY-Li-Gi4" secondAttribute="centerX" id="12f-bf-J4x"/>
-                            <constraint firstItem="iPl-F5-uCP" firstAttribute="top" secondItem="Gid-rq-M6y" secondAttribute="bottom" constant="32" id="865-jS-ywg"/>
-                            <constraint firstItem="5QY-Li-Gi4" firstAttribute="trailing" secondItem="C1M-5e-Itv" secondAttribute="trailing" multiplier="1.1" id="FHB-0Z-krl"/>
-                            <constraint firstItem="Gid-rq-M6y" firstAttribute="centerX" secondItem="5QY-Li-Gi4" secondAttribute="centerX" id="WE8-fT-yvV"/>
-                            <constraint firstItem="5QY-Li-Gi4" firstAttribute="bottom" secondItem="iPl-F5-uCP" secondAttribute="bottom" id="akj-FD-UYK"/>
-                            <constraint firstItem="C1M-5e-Itv" firstAttribute="top" secondItem="5QY-Li-Gi4" secondAttribute="top" constant="32" id="pBB-N1-cTc"/>
-                            <constraint firstItem="Gid-rq-M6y" firstAttribute="top" secondItem="5QY-Li-Gi4" secondAttribute="top" constant="145" id="qDh-Sd-fHL"/>
-                            <constraint firstItem="iPl-F5-uCP" firstAttribute="width" secondItem="JKl-qB-e8N" secondAttribute="width" id="sKt-pM-f8V"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="5QY-Li-Gi4"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="PcC-Hl-W3G"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q5k-5T-mSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1083" y="108"/>
         </scene>
     </scenes>
 </document>
