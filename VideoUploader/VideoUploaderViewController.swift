@@ -133,7 +133,9 @@ extension VideoUploaderViewController {
     private func uploadVideo() {
 
         print(playerViewController.player?.currentItem)
-
+        print(videoUrl?.absoluteURL)
+        guard let videoClipPath = videoUrl?.absoluteURL else { return }
+        API.postData(videoClipPath: videoClipPath)
     }
 }
 
