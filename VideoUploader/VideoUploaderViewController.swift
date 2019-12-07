@@ -138,7 +138,7 @@ extension VideoUploaderViewController {
         //バックエンドからファイルのurlをjsonで返してもらう
         API.fetchLatestVideoUrl() { url in
             print(url)
-            //そのurlでビデオを開くr
+            //そのurlでビデオを開く
             self.playVideo(from: url)
         }
     }
