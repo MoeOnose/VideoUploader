@@ -1,10 +1,14 @@
 # Created by https://www.gitignore.io/api/xcode,carthage
 
-### Xcode ###
 # Xcode
-
 build/
 DerivedData/
+*.xcworkspace
+xcuserdata
+
+#CocoaPod
+Pods/*
+
 
 ## Various settings
 *.pbxuser
@@ -28,6 +32,3 @@ vendor/
 
 #npm
 node_modules/
-
-#CocoaPod
-Pods/*
