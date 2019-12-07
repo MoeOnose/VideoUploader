@@ -137,7 +137,6 @@ extension VideoUploaderViewController {
     private func playUploadedLatestVideo() {
         //バックエンドからファイルのurlをjsonで返してもらう
         API.fetchLatestVideoUrl() { url in
-            print(url)
             //そのurlでビデオを開く
             self.playVideo(from: url)
         }
