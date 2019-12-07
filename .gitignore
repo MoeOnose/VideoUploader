@@ -1,10 +1,14 @@
 # Created by https://www.gitignore.io/api/xcode,carthage
 
-### Xcode ###
 # Xcode
-
 build/
 DerivedData/
+*.xcworkspace
+xcuserdata
+
+#CocoaPod
+Pods/*
+
 
 ## Various settings
 *.pbxuser
@@ -22,10 +26,6 @@ xcuserdata/
 *.xccheckout
 *.xcscmblueprint
 *.DS_Store
-
-### Carthage ###
-Carthage/Checkouts
-Carthage/Build
 
 # gem
 vendor/
