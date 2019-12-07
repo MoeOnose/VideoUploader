@@ -1,22 +1,23 @@
 import UIKit
 import Photos
-
 import AVKit
 
-class VideoUploaderViewController: UIViewController {
-    private let playerViewController = AVPlayerViewController()
+class VideoUploaderViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    private let imagePickerController = UIImagePickerController()
     private var videoUrl: NSURL?
-    private var videoName: String?
-
+    private let imagePickerController = UIImagePickerController()
+    private let playerViewController = AVPlayerViewController()
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBAction func didTapSelectButton(_ sender: Any) { selectVideo() }
-    @IBAction func didTapPlayButton(_ sender: Any) { playVideo() }
+    @IBAction func didTapPlayButton(_ sender: Any) {
+        guard let url = videoUrl?.absoluteURL else { return }
+        playVideo(from: url) }
     @IBAction func didTapUploadButton(_ sender: Any) { uploadVideo() }
     @IBAction func didTapLatestVideoButton(_ sender: Any) { playUploadedLatestVideo() }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.imagePickerController.delegate = self
         confirmPhotoLibraryAuthenticationStatus()
     }
 }
@@ -57,7 +58,7 @@ extension VideoUploaderViewController {
 }
 
 // MARK: Select video
-extension VideoUploaderViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension VideoUploaderViewController {
 
     private func selectVideo() {
         print("select video from camera roll")
@@ -65,8 +66,6 @@ extension VideoUploaderViewController: UIImagePickerControllerDelegate, UINaviga
         self.imagePickerController.mediaTypes = ["public.movie"]
         //選択元はフォトライブラリ
         self.imagePickerController.sourceType = .photoLibrary
-        //imagePickerControllerを呼び出して利用するのはVideoUploaderViewController
-        self.imagePickerController.delegate = self
         //実際にimagePickerControllerを呼び出してフォトライブラリを開く
         self.present(self.imagePickerController, animated: true, completion: nil)
     }
@@ -78,20 +77,15 @@ extension VideoUploaderViewController: UIImagePickerControllerDelegate, UINaviga
         //let phKey = UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerPHAsset")
         //let phAsset = info[phKey] as? PHAsset
         //print("PHAsset", phAsset)
+        //キーから選択された動画のパスを取得する
         let key = UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerMediaURL")
         videoUrl = info[key] as? NSURL
-        //urlの最後がファイル名になる
-        videoName = videoUrl?.lastPathComponent
-        print(videoUrl ?? "videoUrl is not found")
-        print(videoUrl?.absoluteURL ?? "videoUrl.absoluteUrl is not found")
         thumbnailImageView.image = generateThumbnailFromVideo((videoUrl?.absoluteURL)!)
         thumbnailImageView.contentMode = .scaleAspectFit
         imagePickerController.dismiss(animated: true, completion: nil)
-
     }
 
     private func generateThumbnailFromVideo(_ url: URL) -> UIImage? {
-        print("generate a thumbnail from video")
         //以下の３行で縦動画から画像を取り出しても横向きの画像にならないようにしてる
         let asset = AVAsset(url: url)
         let imageGenerator = AVAssetImageGenerator(asset: asset)
@@ -109,23 +103,20 @@ extension VideoUploaderViewController: UIImagePickerControllerDelegate, UINaviga
 }
 // MARK: Play video
 extension VideoUploaderViewController {
-    private func playVideo() {
-        if let videoUrl = videoUrl {
-            //audio setting
-            //thanks to: https://stackoverflow.com/questions/35289918/play-audio-when-device-in-silent-mode-ios-swift
-            do {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-            }
-            catch {
-                print("cannot play the sound with video when silent mode")
-            }
-            guard let url = videoUrl.absoluteURL else { return }
-            let player = AVPlayer(url: url)
-            playerViewController.player = player
-            self.present(playerViewController, animated: true) {
-                print("playing video")
-                self.playerViewController.player!.play()
-            }
+    private func playVideo(from url: URL) {
+//        thanks to: https://stackoverflow.com/questions/35289918/play-audio-when-device-in-silent-mode-ios-swift
+        //サイレントモードでも再生
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        }
+        catch {
+            print("cannot play the sound with video when silent mode")
+        }
+        let player = AVPlayer(url: url)
+        playerViewController.player = player
+        self.present(playerViewController, animated: true) {
+            print("playing video")
+            self.playerViewController.player!.play()
         }
     }
 }
@@ -135,14 +126,20 @@ extension VideoUploaderViewController {
     private func uploadVideo() {
         guard
             let videoClipPath = videoUrl?.absoluteURL,
-            let videoClipName = videoName
+            //urlの最後がファイル名になる
+            let videoClipName = videoUrl?.lastPathComponent
         else { print("not found video path or name"); return }
         API.postData(videoClipPath: videoClipPath, videoClipName: videoClipName)
     }
 }
-
+// MARK: Play video
 extension VideoUploaderViewController {
     private func playUploadedLatestVideo() {
-        API.fetchLatestVideo()
+        //バックエンドからファイルのurlをjsonで返してもらう
+        API.fetchLatestVideoUrl() { url in
+            print(url)
+            //そのurlでビデオを開くr
+            self.playVideo(from: url)
+        }
     }
 }

@@ -9,141 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VideoUploader/APIClient.swift"
-            timestampString = "597137096.461936"
+            filePath = "VideoUploader/VideoUploaderViewController.swift"
+            timestampString = "597210944.830451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "postData(videoClipPath:videoClipName:)"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "playUploadedLatestVideo()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoUploader/APIClient.swift"
-            timestampString = "597137096.4628659"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "postData(videoClipPath:videoClipName:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static VideoUploader.API.postData(videoClipPath: Foundation.URL, videoClipName: Swift.String) -&gt; ()"
-                  moduleName = "VideoUploader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/onosemoe/Desktop/Swift/CreatedByMe/VideoUploader/VideoUploader/APIClient.swift"
-                  timestampString = "597135378.339143"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "990">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.MultipartFormData) -&gt; () in static VideoUploader.API.postData(videoClipPath: Foundation.URL, videoClipName: Swift.String) -&gt; ()"
-                  moduleName = "VideoUploader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/onosemoe/Desktop/Swift/CreatedByMe/VideoUploader/VideoUploader/APIClient.swift"
-                  timestampString = "597135378.341705"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "907">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Alamofire.SessionManager.MultipartFormDataEncodingResult) -&gt; () in static VideoUploader.API.postData(videoClipPath: Foundation.URL, videoClipName: Swift.String) -&gt; ()"
-                  moduleName = "VideoUploader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/onosemoe/Desktop/Swift/CreatedByMe/VideoUploader/VideoUploader/APIClient.swift"
-                  timestampString = "597135378.344173"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "73">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoUploader/APIClient.swift"
-            timestampString = "597137096.463156"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "postData(videoClipPath:videoClipName:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoUploader/APIClient.swift"
-            timestampString = "597137096.463377"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "postData(videoClipPath:videoClipName:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Alamofire.SessionManager.MultipartFormDataEncodingResult) -&gt; () in static VideoUploader.API.postData(videoClipPath: Foundation.URL, videoClipName: Swift.String) -&gt; ()"
-                  moduleName = "VideoUploader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/onosemoe/Desktop/Swift/CreatedByMe/VideoUploader/VideoUploader/APIClient.swift"
-                  timestampString = "597135378.3571"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "498">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.NSProgress) -&gt; () in closure #2 (Alamofire.SessionManager.MultipartFormDataEncodingResult) -&gt; () in static VideoUploader.API.postData(videoClipPath: Foundation.URL, videoClipName: Swift.String) -&gt; ()"
-                  moduleName = "VideoUploader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/onosemoe/Desktop/Swift/CreatedByMe/VideoUploader/VideoUploader/APIClient.swift"
-                  timestampString = "597135378.35888"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "39">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

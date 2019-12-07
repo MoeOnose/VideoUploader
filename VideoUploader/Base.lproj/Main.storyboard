@@ -11,44 +11,6 @@
     </dependencies>
     <scenes>
         <!--Video Uploader View Controller-->
-        <scene sceneID="lWa-zE-cuR">
-            <objects>
-                <viewController id="kOc-lM-K0D" customClass="VideoUploaderViewController" customModule="VideoUploader" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Z4C-d3-Rvp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7k-6B-MWw">
-                                <rect key="frame" x="71" y="592" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="8ch-8Q-ysd"/>
-                                    <constraint firstAttribute="width" constant="80" id="ZzL-jt-ru6"/>
-                                </constraints>
-                                <state key="normal" title="Select"/>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ3-FJ-fKD">
-                                <rect key="frame" x="0.0" y="288" width="414" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="rA5-b3-L6i"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="ZZ3-FJ-fKD" firstAttribute="centerX" secondItem="Sxt-ZX-PuX" secondAttribute="centerX" id="1TH-Je-htB"/>
-                            <constraint firstItem="X7k-6B-MWw" firstAttribute="top" secondItem="Sxt-ZX-PuX" secondAttribute="top" constant="548" id="FXH-ea-XKL"/>
-                            <constraint firstItem="ZZ3-FJ-fKD" firstAttribute="width" secondItem="Z4C-d3-Rvp" secondAttribute="width" id="cZz-Zt-6N4"/>
-                            <constraint firstItem="X7k-6B-MWw" firstAttribute="leading" secondItem="Sxt-ZX-PuX" secondAttribute="leading" constant="71" id="kUb-uu-9h1"/>
-                            <constraint firstItem="X7k-6B-MWw" firstAttribute="top" secondItem="ZZ3-FJ-fKD" secondAttribute="bottom" constant="54" id="mk5-vs-5p4"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Sxt-ZX-PuX"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bun-lA-zVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-862.31884057971024" y="919.41964285714278"/>
-        </scene>
-        <!--Video Uploader View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="VideoUploaderViewController" customModule="VideoUploader" customModuleProvider="target" sceneMemberID="viewController">

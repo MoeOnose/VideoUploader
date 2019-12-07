@@ -4,19 +4,14 @@ import Alamofire
 
 // mime-type: https://www.tagindex.com/html5/basic/mimetype.html
 struct API {
-    let baseURL = URL(string: "http://localhost:3000/api/v1/videos")!
+    static let baseUrl = URL(string: "http://localhost:3000/api/v1/videos")!
     static func postData(videoClipPath: URL, videoClipName: String){
-        let videoClip = videoClipPath
-        //multipart/form-dataでデータを送信する方法
+        //multipart/form-dataでデータを送信する
         Alamofire.upload(multipartFormData: { multipartFormData in
             //multipartFormDataオブジェクトに対してデータの追加を行う
-//            if let data = data {
-//                multipartFormData.append(data, withName: "data" , mimeType: "text/plain")
-                multipartFormData.append(videoClip, withName: "clip", fileName: videoClipName, mimeType: "video/quicktime")
-//            }
-
-            print(multipartFormData.boundary)
-        }, to: url) { encodingResult in
+            //withNameはrailsのActiveStorage側で保存するときのキーと同じ
+            multipartFormData.append(videoClipPath, withName: "clip", fileName: videoClipName, mimeType: "video/quicktime")
+        }, to: baseUrl) { encodingResult in
             //encodingが成功するとこのハンドラが呼ばれる
             switch encodingResult {
             case.success(let upload, _ ,_):
@@ -31,8 +26,29 @@ struct API {
             }
         }
     }
-
-    static func fetchLatestVideo() {
-        
+    static func fetchLatestVideoUrl(completion: @escaping (URL) -> ()) {
+        //レスポンスの型
+        struct FetchResult: Codable {
+            let url: String
+        }
+        //今回パラメーターは特に必要ないので[:](空)で！
+        Alamofire.request(baseUrl, method: .get, parameters: [:])
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("Success!")
+                    //レスポンスを定義したFetchResultに変換する
+                    guard
+                        let data = response.data,
+                        let result = try? JSONDecoder().decode(FetchResult.self, from: data),
+                        //取得できたFetchResultオブジェクトのurl(String🥶)からURLを生成
+                        let fetchedUrl = URL(string: result.url)
+                    else { return }
+                    //取得できたURLをクロージャーに渡す
+                    completion(fetchedUrl)
+                case .failure:
+                    print("Failure!")
+                }
+        }
     }
 }
